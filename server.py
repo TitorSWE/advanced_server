@@ -6,6 +6,10 @@ import requests
 app = Flask(__name__)
 
 # Define a route and its associated function
+@app.route('/')
+def home():
+    return "Welcome to our deployed server. API documentation available soon"
+
 @app.route('/<movies>')
 def getMyNonSenseReview(movies):
     queryParameter = {"product": movies, "quantity": 1}
