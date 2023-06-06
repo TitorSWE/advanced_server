@@ -5,8 +5,8 @@ import requests
 app = Flask(__name__)
 
 # Define a route and its associated function
-@app.route('/<movie>')
-def getMyNonSenseReview(movie):
+@app.route('/<movies>')
+def getMyNonSenseReview(movies):
     queryParameter = {"product": movie, "quantity": 1}
     headerParameter = {"X-Api-Key": '4161bce418794ce98e1dceaa12630395'}
     response = requests.post("https://randommer.io/api/Text/Review", params = queryParameter, headers = headerParameter)
