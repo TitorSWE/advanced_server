@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import render_template
 import os
 import requests
 
@@ -8,9 +9,9 @@ app = Flask(__name__)
 # Define a route and its associated function
 @app.route('/')
 def home():
-    return "Welcome to our deployed server. API documentation available soon"
+    return render_template('docAPI.html')
 
-@app.route('/<movies>')
+@app.route('/review/<movies>')
 def getMyNonSenseReview(movies):
     queryParameter = {"product": movies, "quantity": 1}
     headerParameter = {"X-Api-Key": '4161bce418794ce98e1dceaa12630395'}
